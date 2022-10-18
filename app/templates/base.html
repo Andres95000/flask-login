@@ -1,0 +1,32 @@
+{% extends 'bootstrap/base.html' %}
+
+{% block head %}
+    {{ super() }}
+    <title>
+        {% block title %} Andres | {% endblock %}
+    </title>
+    <link rel="stylesheet" href="{{ url_for('static', filename = 'css/main.css') }}">
+
+{% endblock %}
+
+{% block body %}
+
+    {% block navbar %}
+        {% include 'navbar.html' %}
+    {% endblock %}
+
+    {% for message in get_flashed_messages() %}
+        <div class="alert alert-success alert-dissmissible">
+            <button type="button" data-dismiss = "alert" class="close">&times;</button>
+            {{ message }}
+        </div>
+    {% endfor %} <!-- Estamos mostrando el mensaje de flash en la pagina -->
+
+    {% block content %}
+    {% endblock %}
+
+    {% block scripts %}
+        {{ super() }}
+    {% endblock %} <!-- Estamos importando el codigo JavaScript de Bootstrap -->
+
+{% endblock %}

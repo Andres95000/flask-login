@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}
+
+    {{ super() }}
+    404
+
+{% endblock %} <!-- Para extender lo escrito en la block "title" de la plantilla "base.html" -->
+
+{% block content %}
+
+    <h1>Lo sentimos no podemos acceder al servidor</h1>
+    <p>{{ error }}</p>
+
+{% endblock %}
